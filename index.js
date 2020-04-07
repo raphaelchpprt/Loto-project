@@ -4,6 +4,7 @@ let lastName = document.getElementById('last-name');
 let emailAdress = document.getElementById('email-adress');
 let numbers = document.getElementById('numbers');
 let winningNumbers = [];
+let codeSize = 6;
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -13,7 +14,7 @@ function getRandomIntInclusive(min, max) {
 
 function getArrayOfSixRandomNumbers() {
   winningNumbers = []
-  for (var i = 0; i < 6; i++){
+  for (var i = 0; i < codeSize; i++){
     winningNumbers.push(getRandomIntInclusive(0, 9));
   }
 }
@@ -33,21 +34,27 @@ function validateEmail(email) {
 
 function checkIfGoodNumbers(nums, winningNums) {
 	if (nums.length !== winningNums.length){
-    numbers.insertAdjacentHTML('afterend', '<small class="text-danger">Le nombre de numéro saisi est invalide.</small>')
+    numbers.insertAdjacentHTML('afterend', `<small class="text-danger">Le nombre de numéros saisis doit être égale à ${codeSize}.</small>`)
   }
   else {
     for (var i = 0; i < nums.length; i++) {
       if (nums[i] != winningNums[i]){
         document.getElementById("alert-message").innerHTML = `<div class="alert alert-danger mt-3 mb-1" role="alert">
-        Désolé vous avez perdu, les numéros gagnants sont : <br><h5><span class="badge badge-success"><strong>${winningNumbers[0]} ${winningNumbers[1]} ${winningNumbers[2]} ${winningNumbers[3]} ${winningNumbers[4]} ${winningNumbers[5]}</strong></span></h5>
+          Désolé vous avez perdu, les numéros gagnants sont : <br>
+            <h5 class="mt-2"><strong><span class="badge badge-pill badge-success">${winningNumbers[0]}</span> 
+            <span class="badge badge-pill badge-success">${winningNumbers[1]}</span> 
+            <span class="badge badge-pill badge-success">${winningNumbers[2]}</span> 
+            <span class="badge badge-pill badge-success">${winningNumbers[3]}</span> 
+            <span class="badge badge-pill badge-success">${winningNumbers[4]}</span> 
+            <span class="badge badge-pill badge-success">${winningNumbers[5]}</span></strong></h5>
         </div>`;
-      }
-      else{
-        document.getElementById("alert-message").innerHTML = `<div class="alert alert-success mt-3 mb-1" role="alert">
-        Félicitations vous avez gagné 1 million !!!!!
-        </div>`;
+        return false;
       }
     }
+    document.getElementById("alert-message").innerHTML = `<div class="alert alert-success mt-3 mb-1" role="alert">
+      Félicitations vous avez gagné 1 million !!!!!
+    </div>`;
+    return true;
   }
 }
 
