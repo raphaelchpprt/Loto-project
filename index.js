@@ -18,6 +18,14 @@ function getArrayOfSixRandomNumbers() {
   }
 }
 
+function removeAlertMessages(){
+  document.getElementById("alert-message").innerHTML = ""
+  if(firstName.parentNode.childNodes[2]){firstName.parentNode.childNodes[2].remove()}
+  if(lastName.parentNode.childNodes[2]){lastName.parentNode.childNodes[2].remove()}
+  if(numbers.parentNode.childNodes[2]) {numbers.parentNode.childNodes[2].remove()}
+  if(emailAdress.parentNode.childNodes[2]){emailAdress.parentNode.childNodes[2].remove()}
+}
+
 function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
@@ -46,13 +54,6 @@ function checkIfGoodNumbers(nums, winningNums) {
   }
 }
 
-function removeAlertMessages(){
-  document.getElementById("alert-message").innerHTML = ""
-  if(firstName.parentNode.childNodes[2]){firstName.parentNode.childNodes[2].remove()}
-  if(lastName.parentNode.childNodes[2]){lastName.parentNode.childNodes[2].remove()}
-  if(numbers.parentNode.childNodes[2]) {numbers.parentNode.childNodes[2].remove()}
-  if(emailAdress.parentNode.childNodes[2]){emailAdress.parentNode.childNodes[2].remove()}
-}
 
 function validateField(){
   const firstNameValue = firstName.value;
@@ -81,6 +82,7 @@ function validateField(){
     }
   }
 }
+
 
 const checkLoto = (firstname, lastname, email, lotoNumbers) => {
   window.addEventListener("DOMContentLoaded", () => {
