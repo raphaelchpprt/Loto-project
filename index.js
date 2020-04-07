@@ -40,7 +40,7 @@ function checkIfGoodNumbers(nums, winningNums) {
     for (var i = 0; i < nums.length; i++) {
       if (nums[i] != winningNums[i]){
         document.getElementById("alert-message").innerHTML = `<div class="alert alert-danger mt-3 mb-1" role="alert">
-          Désolé vous avez perdu, les numéros gagnants sont : <br>
+          Désolé vous avez perdu, les numéros gagnants étaient : <br>
             <h5 class="mt-2"><strong><span class="badge badge-pill badge-success">${winningNumbers[0]}</span> 
             <span class="badge badge-pill badge-success">${winningNumbers[1]}</span> 
             <span class="badge badge-pill badge-success">${winningNumbers[2]}</span> 
