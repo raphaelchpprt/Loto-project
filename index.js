@@ -39,7 +39,7 @@ function checkIfGoodNumbers(nums, winningNums) {
     for (var i = 0; i < nums.length; i++) {
       if (nums[i] != winningNums[i]){
         document.getElementById("alert-message").innerHTML = `<div class="alert alert-danger mt-3 mb-1" role="alert">
-        Désolé vous avez perdu, les numéros gagnants sont : <br><strong>${winningNumbers[0]} ${winningNumbers[1]} ${winningNumbers[2]} ${winningNumbers[3]} ${winningNumbers[4]} ${winningNumbers[5]}</strong>
+        Désolé vous avez perdu, les numéros gagnants sont : <br><h5><span class="badge badge-success"><strong>${winningNumbers[0]} ${winningNumbers[1]} ${winningNumbers[2]} ${winningNumbers[3]} ${winningNumbers[4]} ${winningNumbers[5]}</strong></span></h5>
         </div>`;
       }
       else{
