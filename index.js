@@ -32,13 +32,10 @@ function validateEmail(email) {
 }
 
 function checkIfGoodNumbers(nums, winningNums) {
-  if(emailAdress.parentNode.childNodes[2]){emailAdress.parentNode.childNodes[2].remove()}
 	if (nums.length !== winningNums.length){
-    if (numbers.parentNode.childNodes[2]) {numbers.parentNode.childNodes[2].remove()}
     numbers.insertAdjacentHTML('afterend', '<small class="text-danger">Le nombre de numéro saisi est invalide.</small>')
   }
   else {
-    if(numbers.parentNode.childNodes[2]) {numbers.parentNode.childNodes[2].remove()}
     for (var i = 0; i < nums.length; i++) {
       if (nums[i] != winningNums[i]){
         document.getElementById("alert-message").innerHTML = `<div class="alert alert-danger mt-3 mb-1" role="alert">
